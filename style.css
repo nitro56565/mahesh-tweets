@@ -1,0 +1,12 @@
+h1{
+    background-color: aqua;
+    padding: 1rem;
+    text-align: center;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 300px;
+}
