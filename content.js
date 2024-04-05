@@ -19,10 +19,10 @@ function addButton() {
         const tweetTextElement = section.querySelector('div[data-testid="tweetText"]');
         if (tweetTextElement) {
           const tweetText = tweetTextElement.textContent.trim();
-            if (tweetText) {
-              alert(tweetText);
-            }
-          pasteMessage(tweetText); 
+          if (tweetText) {
+            alert(tweetText);
+            pasteMessage(tweetText);
+          }
         }
       });
     });
@@ -43,12 +43,11 @@ function pasteMessage(text) {
 
   if (replyTextarea) {
     replyTextarea.focus();
-    document.execCommand('insertText', false, text);
-    console.log('Text inserted:', text);
+    document.execCommand('insertHTML', false, text);
+    console.log('Text inserted:', `<span>${text}</span>`);
   } else {
     console.error("Reply textarea not found");
   }
 }
-
 
 addButton();
